@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'rns_cameliaregular';
+    src: url('../font/rns_camelia-webfont.eot');
+    src: url('../font/rns_camelia-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/rns_camelia-webfont.woff') format('woff'),
+         url('../font/rns_camelia-webfont.ttf') format('truetype'),
+         url('../font/rns_camelia-webfont.svg#rns_cameliaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+  color: $colorText;
+  background-image: url("../img/bg.jpg");
+  background-size: 55%;
+  background-position-y: 40px;
+  font-family: 'Open Sans', sans-serif;
+
+  @media #{$small}{
+    background: white;
+  }
+  >.row{
+    margin-top: 80px;
+    background: white;  
+    @media #{$small}{
+      margin-top: 0;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5{
+  color: $colorTitle;
+  font-family: $fontFamilySpecial;
+}
+

@@ -1,0 +1,80 @@
+@import "compass/css3";
+
+.tiles{
+  list-style: none;
+  @media only screen and (max-width: 425px){
+    max-width: 320px;
+  }
+  margin: 0 auto;
+  @media only screen and (min-width: 425px){
+    max-width: 425px;
+  }
+  @media only screen and (min-width: 670px){
+    max-width: 640px;
+  }
+  @media only screen and (min-width: 890px){
+    max-width: 100%;
+  }
+}
+.tile{
+  // @media #{$small} {  
+  display: inline-block;
+  position: relative;
+  margin-right: emCalc(10px);
+  
+  @media #{$medium}{
+    margin-right: emCalc(20px);
+  }
+  margin-bottom: emCalc(20px);
+
+
+  h3{
+    font-size: 1em;
+    @media #{$medium}{
+      font-size: 1.2em;
+    }
+    line-height: 1;
+    margin: 0.3em 0 0.1em 0;
+    text-transform: uppercase;
+    color: #222;
+  }
+  .tag{
+    color: #888;
+    font-size: 0.7em;
+    padding: 0;
+    margin: 0 0.2em 0 0;
+    line-height: 1;
+    font-style: italic;
+    float: left;
+    &:hover{
+      color: #ff3d00;
+    }
+  }
+  .img-link{
+    img{
+      overflow: hidden;
+      @include clearfix;
+      display: block;
+      background-size: 320px 240px;
+      @media only screen and (min-width: 425px){
+        width: 200px;
+        height: 150px;
+        background-size: 200px 150px;
+      }
+      @media #{$medium}{
+        width: 280px;
+        height: 210px;        
+        background-size: 280px 210px;
+      }
+      &:hover{
+        @include opacity(0.7);
+      }
+    }
+    
+    &:hover{
+      h3{
+        color: #ff3d00;
+      }
+    }  
+  }
+}

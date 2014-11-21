@@ -1,0 +1,75 @@
+/* simple reset ------------------------*/
+html, body, ul, ol, li, form, fieldset, legend{	margin: 0;	padding: 0; }
+h1, h2, h3, h4, h5, h6, p { margin-top: 0; }
+fieldset,img { border: 0; }
+legend { color: #000; }
+li { list-style: none; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+table{	border-collapse: collapse;	border-spacing: 0;}
+caption, th, td{	text-align: left;	vertical-align: top;	font-weight: normal;}
+input, textarea, select{	font-size: 110%;	line-height: 1.1;}
+abbr, acronym{	border-bottom: .1em dotted;	cursor: help;}
+/* end of simple reset --------------*/
+
+body, input {
+	background: #8b887e;
+	font-size: 12px;	
+	font-family: Arial, Sans-Serif;	
+	color: #666666;
+	margin: 0px;
+	padding: 0px; 
+}
+#wrap{ background: url('images/bg2.png') left top repeat-y; width: 980px; margin: 0 auto; }
+#page {width:980px; color: #666666; padding-top: 50px; text-align: left; position: relative;}
+
+a {color:#f50030}
+a:hover {color:#fe4166}
+
+h1, h2{ text-transform: uppercase; letter-spacing: 2px; }
+h1{ font-size: 30px; color: #f50030; margin: 0px 0px 10px 0px; line-height: 20px;}
+#logo{ 	background: url('images/logo.png');	width: 175px; height: 153px; text-indent: -999px; margin: 0px 0px 30px 70px; cursor: pointer;}
+#sidebar h4{ 
+	text-indent: -999px;
+	height: 26px;
+	width: 120px;
+	margin: 0px 0px 7px 7px;
+	cursor: pointer;
+}
+.sidebar-content{ margin-left: 90px;}
+
+
+
+#content {width: 580px; float: left; margin-left: 40px;}
+#sidebar {width:325px; float: left;}
+#sidebar p{ text-transform: uppercase; color: #999999; font-style: italic; }
+#sidebar ul{ padding: 0px; margin: 0px 0px 15px 7px; }
+#sidebar li{ list-style: none; margin: 0px 0px 5px 7px; }
+#sidebar li a{ color: #666666; text-decoration: none; }
+#sidebar li a:hover{ color: #f50030; }
+#sidebar .nav-tab{ width: 262px; height: 42px; background: url('images/left-tab.png') 0 0 no-repeat; }
+#sidebar .nav-tab a{ text-decoration: none; color: #8b887e; font-weight: bold;}
+#sidebar .nav-tab .link{ padding: 13px 0px 0px 103px; }
+#sidebar .sidebar-box{ width: 165px; margin: 20px 0px 0px 10px;}
+#sidebar .sidebar-box li{ margin: 0px 0px 5px 0px; }
+#footer{ margin: 20px 0px 0px 380px;}
+
+#searchform{ margin: 0px 0px 0px 10px; }
+#searchform #s{ background: #ffffff url('images/search-bg.png') 0px 2px no-repeat; border: none; width: 121px; height: 30px; padding: 5px 0px 0px 10px;}
+#searchform #searchsubmit{ background: #ffffff url('images/search-btn.png') 0 0 no-repeat; border: none; width: 28px; height: 23px; text-indent: -999px;}
+
+
+.break{ background: #FFFFFF url('images/nav-divider.png') 0 0 no-repeat; height: 3px; margin: 10px 0px 30px 0px; width: 120px;}
+.clear{ clear: both; }
+.post{ margin: 0px 0px 50px 0px; }
+.gap{ height: 20px; }
+.hdivider{ background: #FFFFFF url('images/hr.png') 0 0 no-repeat; height: 3px; width: 575px; margin: 10px 0px 20px 0px; }
+small{ font-size: 10px; font-weight: bold; color: #999999;}
+#tape{ background: transparent url('images/tape.png') 0 0 no-repeat; position: absolute; top: 0px; left: 930px; width: 80px; height: 253px; z-index: 100;}
+
+.h4-about{ background: #FFFFFF url('images/about-me.png') 0 0 no-repeat; }
+.h4-design{ background: #FFFFFF url('images/design.png') 0 0 no-repeat; }
+.h4-blog{ background: #FFFFFF url('images/blog.png') 0 0 no-repeat; }
+.read-more{ background: #FFFFFF url('images/read-more.png') 0 0 no-repeat; }
+	
+

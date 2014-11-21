@@ -1,0 +1,267 @@
+@import "compass/css3";
+.row{
+  .side-navigation{
+
+    margin-left: 0;
+
+    @media #{$small}{
+      position: fixed;
+      width: 270px;
+      margin-left: -20px;
+    }
+    @media #{$medium}{
+      margin-left: 60px;
+    }
+    @media #{$large}{
+      margin-left: 130px;
+    }
+
+    padding-left: 20px;
+    
+    h4, .sidebar-search{
+      background: url(../img/sidebar-title-bg.svg) no-repeat;
+      line-height: 2.9;
+      font-size: 0.9em;
+      color: white;
+      text-align: right;
+      padding-right: 56px;
+      text-indent: 13px;
+      font-style: italic;
+      font-weight: normal;
+      font-family: $body-font-family;
+      cursor: pointer;
+    }
+
+    .sidebar-search{
+      width: 210px;
+      height: 41px;
+      padding: 0px 18px 0px 10px;
+      line-height: 2;
+      margin-left: 0px;
+      border: 0;
+      box-shadow: none;
+      &.active{
+        cursor: default;
+        color: $colorText;
+        background: url(../img/sidebar-search-bg.svg) no-repeat;
+      }
+    }
+    .sidebar-categories{
+      margin: 0px 57px 10px 0px;
+      overflow: hidden;
+      position: absolute;
+      height: 100%;
+      left: 0px;
+      width: 200px;
+      border-right: 1px solid #eee;
+      padding: 0 20px 0 0;
+      font-style: italic;
+      @include transition-property(left);
+      @include transition-duration(0.3s); 
+      a{
+        display: block;
+        text-align: right;
+        color: $colorText;
+        margin-bottom: 8px;
+        &:hover{
+          color: $colorPrimary;
+        }
+        &.active{
+          color: $colorPrimary;
+        }
+      }
+      &.active{
+        left: 230px;
+        @include transition-property(left);
+        @include transition-duration(0.3s); 
+      }
+    }
+
+    .block{
+      @include clearfix;
+      // position: fixed;
+      // width: 100%;
+      // height: 150px;
+      background: #f2f0eb url(../img/header-trim.svg) bottom left repeat-x;
+      margin-left: emCalc(-20px);
+      margin-top: 0;
+      @media #{$small}{
+        margin-left: 0;
+        padding-top: emCalc(60px);
+        background: #f2f0eb url("../img/sidebar-trim.svg") top right repeat-y;
+        height: 100%;
+        border-left: 10px solid #f2f0eb;
+        width: 258px;
+        position: absolute;
+        z-index: 10;
+      }
+      .wrapper{
+        margin: 0 auto;
+        @media only screen and (max-width: 430px){
+          max-width: 320px;
+        }
+        margin: 0 auto;
+        @media only screen and (min-width: 425px){
+          max-width: 425px;
+        }
+        @media only screen and (min-width: 640px){
+          max-width: 640px;
+        }
+        @media only screen and (min-width: 890px){
+          max-width: 100%;
+          margin: 0;
+        }
+      }
+    }
+    .logo{
+      margin: 20px auto 20px auto;
+      @media only screen and (min-width: 670px){
+        margin: 0 auto;
+      }
+      width: 200px;
+      height: 220px;
+      background-image: url("../img/annie-brady-logo.svg");
+      background-size: 200px 200px;
+      background-position: 4px 9px;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+
+      @media only screen and (min-width: 670px){
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+      
+      @media #{$small} {  
+        padding: 0;
+        margin: 0px 0 40px 15px;
+        width: 192px;
+        height: 225px;
+        background-position: 0px 0px;
+        background-size: 188px 224px;
+        display: block;
+      }
+      @media #{$large}{
+        //margin: 15px 0 15px -20px;
+      }
+    }
+    .links{
+
+      position: absolute;
+      width: 100%;
+      margin-top: -463px;
+
+      @include transition-property(margin-top);
+      @include transition-duration(0.3s); 
+
+      @media only screen and (min-width: 670px){
+        position: static;
+        width: auto;
+        margin-top: emCalc(5px);
+      }
+
+      display: block;
+      margin-bottom: emCalc(25px);
+      text-align: center;
+
+      @media #{$small} {  
+        margin-left: 50%;
+        text-align: left;
+      }
+      li{
+        background-color: #ddd9d0;
+        display: block;
+        list-style: none;
+        margin-right: 0;
+        padding: 8px 0;
+        border-top: 1px solid #f2f0eb;
+        color: #000;
+        @media only screen and (min-width: 670px){
+         // margin-right: 1.5em;
+          display: inline;
+          background-color: #f2f0eb;
+          color: #222;
+          padding: 0 42px 0 0;
+        }
+        @media only screen and (min-width: 880px){
+          display: block;
+          margin-right: 0;
+          background-color: transparent;
+          text-align: right;
+        }
+
+        a{
+          font-family: $fontFamilySpecial;
+          color: #333333;
+          text-transform: uppercase;
+          font-size: 1em;
+          @media #{$small} {  
+            font-size: 1em;
+          }
+          &:hover{
+            color: $colorPrimary;
+          }
+        }
+      }
+      .menu-trigger{
+        background-color: transparent;
+        background-image: url("../img/blind-tag.svg");
+        background-position: 50% -25px;
+        background-repeat: no-repeat;
+        padding-bottom: 35px;
+        padding-top: 5px;
+        border-top: 0;
+        @media only screen and (min-width: 670px){
+          display: none;
+        }
+      }
+      &.active{
+        margin-top: -341px;
+        .menu-trigger{
+          //display: none;
+        }
+      }
+      @media #{$small}{
+        margin-left: 0.7em;
+        margin-bottom: 1.5em;
+        
+      }
+    }
+    .connect{
+      margin-top: 30px;
+      margin-right: 42px;
+      li{
+        float: right;
+        // margin-right: 10px; 
+        margin-left: 0.4em;
+        margin-bottom: 0.5em;
+        list-style: none;
+        a{
+          width: 30px;
+          height: 30px; 
+          display: block;
+          text-indent: -9999px;
+        }
+        &[id^='icon-']{
+          background-repeat: no-repeat;
+        }
+        .icon-rss{
+          background: url(../img/icon-rss.svg);
+          background-size: 100%;
+        }
+        .icon-twitter{
+          background: url(../img/icon-twitter.svg);
+          background-size: 100%;
+        }
+        .icon-facebook{
+          background: url(../img/icon-facebook.svg);
+          background-size: 100%;
+        }
+        .icon-email{
+          background: url(../img/icon-email.svg);
+          background-size: 100%;
+        }
+      }
+      @include clearfix;
+    }
+  }
+}
