@@ -519,11 +519,12 @@ class getid3_lib
 	}
 
 	public static function XML2array($XMLstring) {
-		if (function_exists('simplexml_load_string')) {
-			if (function_exists('get_object_vars')) {
-				$XMLobject = simplexml_load_string($XMLstring);
-				return self::SimpleXMLelement2array($XMLobject);
-			}
+		if ( function_exists( 'simplexml_load_string' ) && function_exists( 'libxml_disable_entity_loader' ) ) {
+			$loader = libxml_disable_entity_loader( true );
+			$XMLobject = simplexml_load_string( $XMLstring, 'SimpleXMLElement', LIBXML_NOENT );
+			$return = self::SimpleXMLelement2array( $XMLobject );
+			libxml_disable_entity_loader( $loader );
+			return $return;
 		}
 		return false;
 	}
@@ -1138,7 +1139,7 @@ class getid3_lib
 		static $tempdir = '';
 		if (empty($tempdir)) {
 			// yes this is ugly, feel free to suggest a better way
-			require_once(dirname(__FILE__).'/class-getid3.php');
+			require_once(dirname(__FILE__).'/getid3.php');
 			$getid3_temp = new getID3();
 			$tempdir = $getid3_temp->tempdir;
 			unset($getid3_temp);

@@ -5,28 +5,24 @@
  */
 
 ( function( $ ) {
-	var html               = $( 'html' ),
-	    body               = $( 'body' ),
-	    _window            = $( window ),
-	    adjustFooter,
+	var body    = $( 'body' ),
+	    _window = $( window );
 
 	/**
-	 * Adds a top margin to the footer if the sidebar widget area is
-	 * higher than the rest of the page, to help the footer always
-	 * visually clear the sidebar.
+	 * Adds a top margin to the footer if the sidebar widget area is higher
+	 * than the rest of the page, to help the footer always visually clear
+	 * the sidebar.
 	 */
-	adjustFooter = function() {
-		var sidebar   = $( '#secondary .widget-area' ),
-		    secondary = ( 0 == sidebar.length ) ? -40 : sidebar.height(),
-		    margin    = $( '#tertiary .widget-area' ).height() - $( '#content' ).height() - secondary;
-
-		if ( margin > 0 && _window.innerWidth() > 999 )
-			$( '#colophon' ).css( 'margin-top', margin + 'px' );
-	};
-
 	$( function() {
-		if ( body.is( '.sidebar' ) )
-			adjustFooter();
+		if ( body.is( '.sidebar' ) ) {
+			var sidebar   = $( '#secondary .widget-area' ),
+			    secondary = ( 0 === sidebar.length ) ? -40 : sidebar.height(),
+			    margin    = $( '#tertiary .widget-area' ).height() - $( '#content' ).height() - secondary;
+
+			if ( margin > 0 && _window.innerWidth() > 999 ) {
+				$( '#colophon' ).css( 'margin-top', margin + 'px' );
+			}
+		}
 	} );
 
 	/**
@@ -34,22 +30,42 @@
 	 */
 	( function() {
 		var nav = $( '#site-navigation' ), button, menu;
-		if ( ! nav )
+		if ( ! nav ) {
 			return;
+		}
 
 		button = nav.find( '.menu-toggle' );
-		menu   = nav.find( '.nav-menu' );
-		if ( ! button )
+		if ( ! button ) {
 			return;
+		}
 
 		// Hide button if menu is missing or empty.
+		menu = nav.find( '.nav-menu' );
 		if ( ! menu || ! menu.children().length ) {
 			button.hide();
 			return;
 		}
 
-		$( '.menu-toggle' ).on( 'click.twentythirteen', function() {
+		button.on( 'click.twentythirteen', function() {
 			nav.toggleClass( 'toggled-on' );
+		} );
+
+		// Fix sub-menus for touch devices.
+		if ( 'ontouchstart' in window ) {
+			menu.find( '.menu-item-has-children > a' ).on( 'touchstart.twentythirteen', function( e ) {
+				var el = $( this ).parent( 'li' );
+
+				if ( ! el.hasClass( 'focus' ) ) {
+					e.preventDefault();
+					el.toggleClass( 'focus' );
+					el.siblings( '.focus' ).removeClass( 'focus' );
+				}
+			} );
+		}
+
+		// Better focus for hidden submenu items for accessibility.
+		menu.find( 'a' ).on( 'focus.twentythirteen blur.twentythirteen', function() {
+			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 		} );
 	} )();
 
@@ -63,8 +79,9 @@
 		var element = document.getElementById( location.hash.substring( 1 ) );
 
 		if ( element ) {
-			if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) )
+			if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) {
 				element.tabIndex = -1;
+			}
 
 			element.focus();
 		}

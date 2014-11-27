@@ -1,4 +1,7 @@
 <?php
+/** Enable W3 Total Cache Edge Mode */
+define('W3TC_EDGE_MODE', true); // Added by W3 Total Cache
+
 /** Enable W3 Total Cache */
 define('WP_CACHE', true); // Added by W3 Total Cache
 
@@ -28,7 +31,7 @@ define('DB_USER', 'anniebrady');
 define('DB_PASSWORD', 'SDJg84hs');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '37.139.4.249');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

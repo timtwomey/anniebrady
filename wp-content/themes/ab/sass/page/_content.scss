@@ -24,7 +24,7 @@
         margin: 0 0 0 emCalc(500px);
       }
     }
-    @media #{$large}{
+    @media only screen and (min-width: 1325px){
       margin: 0 0 0 emCalc(430px);
       @include transition-property(margin-left);
       @include transition-duration(0.3s); 

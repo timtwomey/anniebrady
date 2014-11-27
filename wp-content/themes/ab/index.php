@@ -14,14 +14,21 @@
  * @since Twenty Thirteen 1.0
  */
 
-get_header(); ?>
+get_header();  ?>
 
 
 <?php get_sidebar(); ?>
 	<!-- <div class="tiles"> -->
 	<ul class="tiles">
-		<?php while ( have_posts() ) : the_post(); ?>
-		
+
+			<?php if ( is_home() ) { ?>
+				<li class="tile index-tile">
+					<div class="index-tile-content"></div>
+				</li>
+			<?php } ?>
+
+		<?php while ( have_posts() ) : the_post(); ?> 
+
 			<li class="tile">
 				<?php
 					$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
@@ -36,6 +43,7 @@ get_header(); ?>
 					<h3><?php the_title(); ?></h3>
 				</a>
 
+				<p class="tile-links">
 				<?
 				$tags = wp_get_post_tags(get_the_ID()); // store category objects for current post in an array
 				$count = 0;
@@ -49,6 +57,7 @@ get_header(); ?>
 				  $count++;
 				}
 				?>
+				</p>
 
 			</li>
 		

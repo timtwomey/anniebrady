@@ -60,6 +60,32 @@
     $('.sidebar-categories-toggle').click(function(e, ui){
       toggleSidebarCategories();
     });
+
+
+    var banners = [
+      'http://anniebrady.com/wp-content/uploads/pattern-paint-roller-floral-fan_web.jpg.jpeg',
+      'http://anniebrady.com/wp-content/uploads/banner.jpg'
+    ];
+    var bannerCount = 1;
+    var $banner = $('.index-tile-content');
+
+    function rotateBanner () {
+
+      if ( bannerCount===banners.length ) { bannerCount = 0; }
+
+      $banner.fadeOut(500, function () {
+        $banner.css('background-image', "url('" + banners[bannerCount] + "')");
+        $banner.fadeIn(500, function () {
+          bannerCount++;
+          setTimeout( rotateBanner, 5000 );
+        });
+      });
+    }
+
+    if( $banner.length > 0 ) {
+      setTimeout( rotateBanner, 5000 );
+    } 
+
   </script>
 	<?php 
 		//wp_footer(); 

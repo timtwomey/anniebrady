@@ -7,8 +7,19 @@ $colorTitle       : #484949;
 $colorSubText     : #8e8b83;
 
 $colorText        : #3E3F3F;
-$fontFamilySpecial: 'rns_cameliaregular';
+// $fontFamilySpecial: 'rns_cameliaregular';
+$fontFamilySpecial: "Open Sans";
 $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 $body-font-weight: 300;
+$header-font-weight: 300;
 $paragraph-font-weight: $body-font-weight;
 $panelOutline     : #1C1C1C;
+
+
+$include-html-classes: false !default;
+$include-print-styles: false !default;
+
+$include-html-grid-classes: true;
+$include-html-visibility-classes: true;
+$include-html-button-classes: true;
+$include-html-form-classes: true;

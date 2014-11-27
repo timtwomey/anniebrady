@@ -10,7 +10,7 @@
     @media #{$medium}{
       width: 80px;
     }
-    @media #{$large}{
+    @media only screen and (min-width: 1325px){
       width: 150px;
     }  
 
