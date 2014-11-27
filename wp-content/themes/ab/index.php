@@ -24,6 +24,7 @@ get_header();  ?>
 			<?php if ( is_home() ) { ?>
 				<li class="tile index-tile">
 					<div class="index-tile-content"></div>
+					<div class="index-tile-indicators"></div>
 				</li>
 			<?php } ?>
 

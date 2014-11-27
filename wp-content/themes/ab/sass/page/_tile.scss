@@ -20,7 +20,7 @@
   &:first-child {
     width: 302px;
     height: 320px;
-    background-color: black;
+    background-color: #efefef;
     .index-tile-content {
       background-image: url('http://anniebrady.com/wp-content/uploads/pattern-paint-roller-floral-fan_web.jpg.jpeg');
       background-repeat: no-repeat;
@@ -30,6 +30,7 @@
       height: 100%;
     }
   }
+
   @media only screen and (min-width: 430px){
     &:first-child {
       width: 414px;
@@ -67,6 +68,35 @@
   @media only screen and (min-width: 1618px){
     &:first-child {
        width: 1162px;
+    }
+  }
+}
+.index-tile-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+    @include clearfix;
+    li {
+      margin: 0 0 0 8px;
+      padding: 0;
+      display: block;
+      float: left;
+      a {
+        width: 16px;
+        height: 16px;
+        background-color: #DDDAD0;
+        display: block;
+        overflow: hidden;
+        text-indent: 30px;
+        border-radius: 10px;
+        &.active {
+          background-color: #f2f0eb ;
+        }
+      }
     }
   }
 }
