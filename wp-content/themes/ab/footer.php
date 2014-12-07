@@ -29,7 +29,7 @@
         });
       }
       resize();
-
+      rotateBanner();
     });
     $(window).resize(function(){
       resize();
