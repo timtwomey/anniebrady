@@ -2,12 +2,12 @@
   <div class="sidebar"></div>
   <div class="side-navigation">
     <div class="block">
-      <a href="/portfolio"><div class="logo">Annie Brady</div></a>
+      <a href="/collections"><div class="logo">Annie Brady</div></a>
       <ul class="links">
+        <li><a href="/collections">Collections</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/about">About Me</a></li>
         <li><a href="/contact">Connect</a></li>
-        <li><a href="http://surfacelove.com">Blog</a></li>
         <li class="menu-trigger"><a href="#">Menu</a></li>
       </ul>
       <div class="hide-for-small">
