@@ -32,15 +32,20 @@ get_header();  ?>
 
 			<li class="tile">
 				<?php
-					$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
-					if ( ! is_array($attachments) ) continue;
-					$count = count($attachments);
-					$first_attachment = array_shift($attachments);
-					$this_img = wp_get_attachment_image_src($first_attachment->ID, 'medium'); 
+					if(has_post_thumbnail()){
+						$this_img = get_the_post_thumbnail();
+					} else {
+						$attachments = get_children(array('post_parent' => get_the_ID(), 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));
+						if ( ! is_array($attachments) ) continue;
+						$count = count($attachments);
+						$first_attachment = array_shift($attachments);
+						$img_ar = wp_get_attachment_image_src($first_attachment->ID, 'medium'); 
+						$this_img = '<img src="'.$img_ar[0].'"/>';
+					}
 					?>
 
 				<a class="img-link" href="<?php the_permalink(); ?>">
-					<img src="<?php echo $this_img[0]; ?>"/>
+					<?php echo $this_img; ?>
 					<h3><?php the_title(); ?></h3>
 				</a>
 
