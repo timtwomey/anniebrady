@@ -63,7 +63,7 @@
 
 
     var banners = [
-      'http://anniebrady.com/wp-content/uploads/gift-wrap-header2.jpg',
+      'http://anniebrady.com/wp-content/uploads/gift-wrap-header4.jpg',
       'http://anniebrady.com/wp-content/uploads/pattern-paint-roller-floral-fan_sized.jpg',
       'http://anniebrady.com/wp-content/uploads/greeting-cards-header2.jpg'
     ];
