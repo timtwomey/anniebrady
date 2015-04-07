@@ -16,6 +16,7 @@ body{
   background-size: 55%;
   background-position-y: 40px;
   font-family: 'Open Sans', sans-serif;
+  max-width: 1690px;
 
   @media #{$small}{
     background: white;
